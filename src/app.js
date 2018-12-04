@@ -3,7 +3,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {AppContainer} from 'react-hot-loader'
 
-import Hello from './hello'
+import './index.scss'
+
+import App from './components/App'
 
 // eslint-next-disable-line
 import(/* webpackChunkName: "my-chunk-name" */ './foo').then(
@@ -28,8 +30,9 @@ const render = Component =>
     </AppContainer>,
     document.getElementById('root')
   )
-render(Hello)
+
+render(App)
 
 if (module.hot) {
-  module.hot.accept('./hello', () => render(require('./hello').default))
+  module.hot.accept('./components/App', () => render(require('./components/App').default))
 }
